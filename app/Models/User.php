@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function tweets()
+    {
+        return $this -> hasMany(Tweets::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
